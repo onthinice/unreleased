@@ -148,4 +148,34 @@ Scroll();
     <div class="cd-container"><img src="https://i.postimg.cc/4yd2MYvM/flaws-cd-only-V2.png" alt="CD" class="cd"></div>
     <a href="https://onthinice.github.io/guestbook/" title="web counter"><img src="https://counter11.optistats.ovh/private/freecounterstat.php?c=agb815ts9sxy1gnzd77wr8s7nefd49cx" border="0" title="web counter" alt="web counter"></a>
   </body>
+<style>
+    button {
+        display: none; /* Hide by default */
+    }
+
+    /* Show speaker button only for screens smaller than 600px (common for mobile devices) */
+    @media only screen and (max-width: 600px) {
+        button {
+            display: inline-block; /* Show for mobile */
+        }
+    }
+</style>
+<audio id="myAudio">
+<source src="https://audio.jukehost.co.uk/GNKOZCgJxZ3IH7iEa1OHoSxUMZULwrXH" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+<button onclick="toggleAudio()">Click Me</button>
+
+<script>
+var audio = document.getElementById("myAudio");
+
+function toggleAudio() {
+if (audio.paused) {
+audio.play();
+} else {
+audio.pause();
+}
+}
+</script>
 <html>
