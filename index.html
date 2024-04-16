@@ -4,8 +4,8 @@
     <head>
  <link rel="shortcut icon" type="image/x-icon" href="favicon.png"> 
 </head>
-    <p hidden><audio controls autoplay>
-     <source src="https://audio.jukehost.co.uk/GNKOZCgJxZ3IH7iEa1OHoSxUMZULwrXH" type="audio/mpeg" />
+    <p hidden><audio controls pause>
+     <source src="" type="audio/mpeg" />
 
      <source src="" type="audio/mpeg" />
 
@@ -75,7 +75,7 @@
 
         <meta
             property="og:image"
-            content="https://theabsoluterealm.com/main/assets/origlogo.gif" />
+            content="" />
         <meta
             property="og:description"
             content="Your corner or the internet!" />
@@ -103,7 +103,7 @@ Scroll();
       	
     a {
       color:white;
-      font-weight: bold;
+      font-weight: thin;
       text-decoration: none;
       
     }
@@ -146,11 +146,10 @@ Scroll();
      
     <div>&nbsp; </div>
     <div class="cd-container"><img src="https://i.postimg.cc/4yd2MYvM/flaws-cd-only-V2.png" alt="CD" class="cd"></div>
-    <a href="https://onthinice.github.io/guestbook/" title="web counter"><img src="https://counter11.optistats.ovh/private/freecounterstat.php?c=agb815ts9sxy1gnzd77wr8s7nefd49cx" border="0" title="web counter" alt="web counter"></a>
   </body>
 <style>
     button {
-        display: none; /* Hide by default */
+        display: visible; /* Hide by default */
     }
 
     /* Show speaker button only for screens smaller than 600px (common for mobile devices) */
@@ -165,7 +164,7 @@ Scroll();
 Your browser does not support the audio element.
 </audio>
 
-<button onclick="toggleAudio()">Click Me</button>
+<button onclick="toggleAudio()">Play</button>
 
 <script>
 var audio = document.getElementById("myAudio");
@@ -177,5 +176,52 @@ audio.play();
 audio.pause();
 }
 }
+    </script>
+<!-- Clickable text transition to another site -->
+<a href="https://onthinice.github.io/winamp/">
+    <div id="text-container">
+        <span id="typed-text" style="font-size: 20px; filter: drop-shadow(0px 0px 5px white);"></span>
+        <span class="cursor"></span>
+    </div>
+</a>
+<img src="" alt="" style="height: 0px;">
+
+<script>
+    
+    const textContainer = document.getElementById('typed-text');
+    const cursor = document.querySelector('.cursor');
+    const words = ["Noah Wolf","FLAWS.", "...Coming soon.","Just press play."];
+
+    let currentWordIndex = 0;
+    let currentCharIndex = 0;
+
+    function typeText() {
+        const currentWord = words[currentWordIndex];
+        const currentText = currentWord.substring(0, currentCharIndex + 1);
+        textContainer.textContent = currentText;
+
+        if (currentCharIndex < currentWord.length) {
+            currentCharIndex++;
+            setTimeout(typeText, 100); // Adjust the speed here (in milliseconds)
+        } else {
+            setTimeout(eraseText, 1500); // Time before starting the erasing
+        }
+    }
+
+    function eraseText() {
+        if (currentCharIndex >= 0) {
+            const currentText = words[currentWordIndex].substring(0, currentCharIndex);
+            textContainer.textContent = currentText;
+            currentCharIndex--;
+            setTimeout(eraseText, 50); // Adjust the speed here (in milliseconds)
+        } else {
+            currentWordIndex = (currentWordIndex + 1) % words.length;
+            setTimeout(typeText, 500); // Time before starting the typing again
+        }
+    }
+
+    // Start the initial typing
+    setTimeout(typeText, 1000); // Time before starting the typing
 </script>
+<a href="" title="web counter"><img src="https://counter11.optistats.ovh/private/freecounterstat.php?c=agb815ts9sxy1gnzd77wr8s7nefd49cx" border="0" title="web counter" alt="web counter"></a>
 <html>
